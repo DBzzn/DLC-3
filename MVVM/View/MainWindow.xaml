@@ -1,0 +1,135 @@
+﻿<Window x:Class="DLC_3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DLC_3"
+        mc:Ignorable="d"
+        Title="BOMPTON" Height="450" Width="800"
+        WindowStyle="None"
+        Background="#252525"
+        ResizeMode="CanResizeWithGrip"
+        AllowsTransparency="True">
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
+        <!-- LY barra superior -->
+        <Border Grid.ColumnSpan="2"
+                Background="#202020"
+                MouseDown="Border_MouseDown">
+
+            <Grid HorizontalAlignment="Stretch">
+                <Image Source="/Icons/hon.png" 
+                       RenderOptions.BitmapScalingMode="HighQuality"
+                       Height="20"                       />
+
+                <Label Content="BOMPTON"
+                       Foreground="Gray"
+                       FontWeight="SemiBold"/>
+
+
+                <StackPanel HorizontalAlignment="Right"
+                            Orientation="Horizontal">
+                    <Button Height="25" Width="25"
+                            Content="–"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            Foreground="Gray"
+                            FontWeight="Bold"
+                            Margin="0,0,0,3"
+                            Click="ButtonMinimize_Click"/>
+
+                    <Button Height="25" Width="25"
+                            Content="⌂"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            Foreground="Gray"
+                            Click="WindowStateButton_Click"
+                            FontWeight="Bold"/>
+
+                    <Button Height="25" Width="25"
+                            Content="✕"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            Foreground="Gray"
+                            FontWeight="Bold"
+                            Click="CloseButton_Click"/>
+                </StackPanel>
+            </Grid>
+
+        </Border>
+
+        <Grid Grid.Column="0" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="26"/>
+                <RowDefinition/>
+                <RowDefinition Height="60"/>
+            </Grid.RowDefinitions>
+            
+            <Label Content="Contatos"
+                   HorizontalAlignment="Center"
+                   FontWeight="SemiBold"
+                   Foreground="White"/>
+
+            <ListView Grid.Column="0"
+                      Grid.Row="1"
+                      Background="Transparent">
+                
+            </ListView>
+
+            <StackPanel Grid.Row="2"
+                        Orientation="Horizontal"
+                        Background="#323232">
+                
+                <Border CornerRadius="25"
+                        Width="30" Height="30"
+                        Background="Green"
+                        Margin="18,0,0,0"/>
+                
+                <StackPanel VerticalAlignment="Center">
+                    <Label Content="username"
+                           Foreground="White"
+                           FontWeight="SemiBold"
+                           Margin="0,-5,0,-5"/>
+                    <Label Content="CustomStatus"
+                           Foreground="Gray"
+                           FontWeight="SemiBold"
+                           FontSize="10"
+                           Margin="0,-5,0,-5"/>
+                </StackPanel>
+                
+                <Button Content="CFG"
+                        Background="Transparent"
+                        Command="{Binding NavigateSettingsCommand}"
+                        Width="40"
+                        Height="20"
+                        FontFamily="Semi-Bold"
+                        FontSize="12"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        Margin="22,0,0,0"/>
+                
+                
+            </StackPanel>
+        </Grid>
+
+        
+        <Grid Grid.Column="1" Grid.Row="1">
+            <ContentControl Content="{Binding Navigation.CurrentView}">                
+            </ContentControl>
+        </Grid>
+
+
+
+    </Grid>
+</Window>

@@ -1,0 +1,30 @@
+﻿<Application x:Class="DLC_3.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:DLC_3"
+             xmlns:viewModel="clr-namespace:DLC_3.MVVM.ViewModel" xmlns:view="clr-namespace:DLC_3.MVVM.View">
+    <Application.Resources>
+       
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="./Themes/ContactCard.xaml"/>
+                <ResourceDictionary Source="./Themes/ChatItem.xaml"/>
+                <ResourceDictionary Source="./Themes/MessageBox.xaml"/>
+                <ResourceDictionary Source="./Themes/StylishScrollbar.xaml"/>
+                <ResourceDictionary Source="./Themes/Buttons.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            
+            <DataTemplate DataType="{x:Type viewModel:CViewModel}">
+                <view:CView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:SettingsViewModel}">
+                <view:SettingsView/>
+            </DataTemplate>
+
+        </ResourceDictionary>
+        
+        
+                
+
+    </Application.Resources>
+</Application>

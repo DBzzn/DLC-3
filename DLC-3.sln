@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DLC-3", "DLC-3.csproj", "{8B425634-0B79-4C4C-8330-65629C8F3B28}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8B425634-0B79-4C4C-8330-65629C8F3B28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B425634-0B79-4C4C-8330-65629C8F3B28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B425634-0B79-4C4C-8330-65629C8F3B28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B425634-0B79-4C4C-8330-65629C8F3B28}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {98EBF17D-0B7B-418A-89EE-E97D0818D93A}
+	EndGlobalSection
+EndGlobal
