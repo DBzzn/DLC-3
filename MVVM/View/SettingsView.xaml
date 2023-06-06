@@ -6,8 +6,25 @@
              xmlns:local="clr-namespace:DLC_3.MVVM.View"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
-             Background="White">
+             Background="#202020">
     <Grid>
-            
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button Content="✓"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Background="Transparent"
+                Foreground="White"
+                FontSize="16" FontWeight="SemiBold"
+                Width="30" Height="30" BorderThickness="2"
+                Command="{Binding NavigateToCViewCommand}"/>
+
+        <StackPanel Grid.Row="1" 
+                   HorizontalAlignment="Center">
+            <Label HorizontalAlignment="Center"/>
+        </StackPanel>
+        
     </Grid>
 </UserControl>

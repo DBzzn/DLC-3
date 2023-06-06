@@ -2,7 +2,7 @@
 
 namespace DLC_3.MVVM.Model
 {
-    class MessageModel
+    public class MessageModel
     {
         public string Username { get; set; }
         public string UsernameColor { get; set; }
@@ -14,4 +14,4 @@ namespace DLC_3.MVVM.Model
     }
 
 }
-}
+
