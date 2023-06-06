@@ -73,6 +73,9 @@
     <Compile Include="Core\ViewModel.cs" />
     <Compile Include="MVVM\Model\MessageModel.cs" />
     <Compile Include="MVVM\Model\UserModel.cs" />
+    <Compile Include="NET\IO\PacketBuilder.cs" />
+    <Compile Include="NET\IO\PacketReader.cs" />
+    <Compile Include="NET\Server.cs" />
     <Compile Include="Services\NavigationService.cs" />
     <Page Include="MVVM\View\CView.xaml">
       <SubType>Designer</SubType>
@@ -160,8 +163,6 @@
     <Resource Include="Icons\phone.png" />
     <Resource Include="Icons\plus.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="NET\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
