@@ -81,5 +81,26 @@ namespace DLC_3.NET
 
         }
 
+
+        public void SendMessageToServer(string msg)
+        {
+
+            try
+            {
+                var messagePacket = new PacketBuilder();
+                messagePacket.WriteOpCode(5);
+                messagePacket.WriteMessage(msg);
+                _client.Client.Send(messagePacket.GetPacketBytes());
+
+            }
+            catch 
+            {
+                MessageBox.Show("Falha na conexão com o servidor", "ERRO!",
+                    MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+
+        }
+
     }
 }
