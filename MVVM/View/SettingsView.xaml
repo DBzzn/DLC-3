@@ -4,6 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:DLC_3.MVVM.View"
+             xmlns:viewmodel="clr-namespace:DLC_3.MVVM.ViewModel"
+             d:DataContext="{d:DesignInstance Type=viewmodel:SettingsViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
              Background="#202020">
@@ -12,6 +14,7 @@
             <RowDefinition Height="30"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        
         <Button Content="✓"
                 HorizontalAlignment="Right"
                 VerticalAlignment="Top"
@@ -22,8 +25,65 @@
                 Command="{Binding NavigateToCViewCommand}"/>
 
         <StackPanel Grid.Row="1" 
-                   HorizontalAlignment="Center">
-            <Label HorizontalAlignment="Center"/>
+                   HorizontalAlignment="Center"
+                    VerticalAlignment="Top">
+            
+            <Label Content="Username"
+                   HorizontalAlignment="Center"
+                   Foreground="White"
+                   FontWeight="SemiBold"/>
+
+            <Border BorderThickness="2"
+                    CornerRadius="4"
+                    Width="100"
+                    BorderBrush="Black"
+                    Background="White">
+
+                <TextBox Name="usr"
+                         BorderThickness="0"
+                         Background="Transparent"
+                         Text="{Binding scfg[0]}"
+                         TextAlignment="Center"/>
+            </Border>
+
+            
+            <Label Content="Servidor"
+                   HorizontalAlignment="Center"
+                   Foreground="White"
+                   FontWeight="SemiBold"/>
+
+            <Border BorderThickness="2"
+                    CornerRadius="4"
+                    Width="100"
+                    BorderBrush="Black"
+                    Background="White">
+
+                <TextBox Name="srv"
+                         BorderThickness="0"
+                         Background="Transparent"
+                         Text="{Binding scfg[1]}"
+                         TextAlignment="Center"/>
+            </Border>
+
+            <Label Content="Porta"
+                   HorizontalAlignment="Center"
+                   Foreground="White"
+                   FontWeight="SemiBold"/>
+
+            <Border BorderThickness="2"
+                    CornerRadius="4"
+                    Width="75"
+                    BorderBrush="Black"
+                    Background="White">
+
+                <TextBox Name="port"
+                         BorderThickness="0"
+                         Background="Transparent"
+                         Text="{Binding scfg[2]}"
+                         TextAlignment="Center"/>
+            </Border>
+
+        
         </StackPanel>
         
     </Grid>

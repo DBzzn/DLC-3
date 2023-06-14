@@ -1,5 +1,6 @@
 ﻿using DLC_3.Core;
 using DLC_3.MVVM.ViewModel;
+using DLC_3.NET;
 using System;
 using System.Collections.Generic;
 using System.Linq;

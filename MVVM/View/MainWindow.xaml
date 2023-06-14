@@ -1,9 +1,10 @@
-﻿<Window x:Class="DLC_3.MainWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:DLC_3"
+        xmlns:local="clr-namespace:DLC_3" xmlns:viewmodel="clr-namespace:DLC_3.MVVM.ViewModel" xmlns:View="clr-namespace:DLC_3.MVVM.View" x:Class="DLC_3.MainWindow"
+        d:DataContext="{d:DesignInstance Type={x:Type viewmodel:MainViewModel}}"
         mc:Ignorable="d"
         Title="BOMPTON" Height="450" Width="800"
         WindowStyle="None"
@@ -22,7 +23,7 @@
             <ColumnDefinition Width="200"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        
+
         <!-- LY barra superior -->
         <Border Grid.ColumnSpan="2"
                 Background="#202020"
@@ -75,7 +76,11 @@
                 <RowDefinition/>
                 <RowDefinition Height="60"/>
             </Grid.RowDefinitions>
-            
+
+
+
+
+            <!-- LY dos contatos -->
             <Label Content="Contatos"
                    HorizontalAlignment="Center"
                    FontWeight="SemiBold"
@@ -83,21 +88,24 @@
 
             <ListView Grid.Column="0"
                       Grid.Row="1"
-                      Background="Transparent">
-                
-            </ListView>
+                      Background="Transparent"
+                      ItemsSource="{Binding Users}"
+                      SelectedItem="{Binding SelectedContact}"
+                      ItemContainerStyle="{StaticResource ContactCard}"/>
 
+
+            <!-- LY do User -->
             <StackPanel Grid.Row="2"
                         Orientation="Horizontal"
                         Background="#323232">
-                
+
                 <Border CornerRadius="25"
                         Width="30" Height="30"
                         Background="Green"
                         Margin="18,0,0,0"/>
-                
+
                 <StackPanel VerticalAlignment="Center">
-                    <Label Content="username"
+                    <Label Content="{Binding Username}"
                            Foreground="White"
                            FontWeight="SemiBold"
                            Margin="0,-5,0,-5"/>
@@ -107,9 +115,11 @@
                            FontSize="10"
                            Margin="0,-5,0,-5"/>
                 </StackPanel>
-                
+
                 <Button Content="CFG"
                         Background="Transparent"
+                        Foreground="White"
+                        FontWeight="SemiBold"
                         Command="{Binding NavigateSettingsCommand}"
                         Width="40"
                         Height="20"
@@ -118,15 +128,14 @@
                         HorizontalAlignment="Left"
                         VerticalAlignment="Center"
                         Margin="22,0,0,0"/>
-                
-                
+
+
             </StackPanel>
         </Grid>
 
-        
+
         <Grid Grid.Column="1" Grid.Row="1">
-            <ContentControl Content="{Binding Navigation.CurrentView}">                
-            </ContentControl>
+            <ContentControl Content="{Binding Navigation.CurrentView}"/>
         </Grid>
 
 

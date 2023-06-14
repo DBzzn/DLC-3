@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DLC_3.NET.IO
 {
-    class PacketReader : BinaryReader
+    public class PacketReader : BinaryReader
     {
         private NetworkStream _ns;
 
